@@ -32,7 +32,7 @@ Each students gets a sample dataset of about 120 MB that is small enough to proc
 
 The page action of "submit cancellation" could be used to define a user dropping out. The dataset did have a time axis "ts", but I defined a mutual relative time axis "membership_days" to see how the users are evolving over the time of their membership. In order to learn more about general trends in the data I also created the feature "week" that allows me to aggregate indicators over it and visualize trends. More about this in the blog that is linked in this README.
 
-I the second notebook "Sparkify_ML.ipynb" I further wrangeled the data and provide a dataframe that has aggregated features by "userId". The dataset is strongly imbalanced which is why I tried a "Decision Tree Classifier" (dtc) and a "Random Forest Classifier" (rfc) to predict if a user "churns" or not. Both of those algorithms are known to be good with imbalanced datasets. The rfc yielded better results and was therefore chosen for a hyperparameter tuning. At the beginning of this notebook I defined a function to measure the performance of each model witht the basic definitions of accuracy, precision, f1, and recall. It also includes a confusion matrix which I did not find as a function in the pyspark library. Again you can find the details in my blog article.
+I the second notebook "Sparkify_ML.ipynb" I further wrangeled the data and provide a dataframe that has aggregated features by "userId". Due to good performance in the past I tried a "Decision Tree Classifier" (dtc) and a "Random Forest Classifier" (rfc) to predict if a user "churns" or not. The rfc used all of my features for prediction while showing similar performance and was therefore chosen for a hyperparameter tuning. At the beginning of this notebook I defined a function to measure the performance of each model witht the basic definitions of accuracy, precision, f1, and recall. It also includes a confusion matrix which I did not find as a function in the pyspark library. Again you can find the details in my blog article.
 
 ### 2. Moving it to AWS
 This step needed a little research on top of the information that is provided by udacity to set up an EMR cluster with a notebook. A particular problem was for me that my work laptop did not allow me (company policies) to upload data to the S3 or even save my notebooks there. Only after switching to my personal computer could I do those things and really work on my project.
@@ -41,7 +41,7 @@ After solving those issues I could basically transfer my notebooks that I develo
 All of the results on the small dataset were confirmed and the already observed trends got mor clear.
 
 ## Blog <a name="blog"></a>
-
+https://snkrause.medium.com/sparkify-to-churn-or-not-to-churn-4a62438a934
 
 ## Files in the repository <a name="files"></a>
 
